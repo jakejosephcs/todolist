@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 vw-100 bg-primary">
+        <header class="d-flex justify-content-center pt-2 pb-2 bg-secondary w-100">
+            <h2 class="text-light pr-3 ">To Do List</h2>
+        </header>
+
+        <section class="main-page bg-light d-flex flex-column justify-content-between align-items-center pt-3 pb-3 pl-3 pr-3 w-100">
+            <div class="dropdown category-button-container">
+                <select name="categories" id="categorySelect" class="btn btn-secondary dropdown-toggle">
+                    <option id="all" class="dropdown-item">ALL</option>
+                </select>
+            </div>
+            <div class="tasks-container d-flex flex-column">
+                <div class="task d-flex justify-content-center align-items-center pt-3 border-bottom pb-2">
+                    <input type="checkbox" name="" id="">
+                    <div class="task-info d-flex flex-column ml-3 align-items-center justify-content-center">
+                        <div class="task-name d-flex pr-2 pl-2 w-100 justify-self-center">Task</div>
+                        <div class="task-details d-flex align-items-center justify-content-between">
+                            <div class="task-category pl-2 pr-2">Category</div>
+                            <div class="task-priortiy pl-2 pr-2">Priority</div>
+                            <div class="task-due-date pl-2 pr-2 text-black-50">Due Date</div>
+                        </div>
+                    </div>
+                    <button class="view-or-edit-task h-50 ml-2 btn btn-primary btn-sm">View or Edit</button>
+                </div>
+            </div>
+            <button class="add-new-task w-100 btn btn-secondary">Add a New Task</button>
+        </section>
+
+        <section class="view-or-edit-page bg-light w-100 d-none">
+            <form class="pl-3 pr-3 pt-3 pb-3">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name>
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" class="form-control" id="dueDate>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <input type="text" class="form-control" id="category">
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>Low</option>
+                      <option>Med</option>
+                      <option>High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="notes">Notes</label>
+                  <textarea class="form-control" id="notes" rows="3"></textarea>
+                </div>
+                <div class="update-delete-btn d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary btn-sm">Update Task</button>
+                    <button type="submit" class="btn btn-danger btn-sm">Delete Task</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="add-new-task-page bg-light w-100 d-none">
+            <form class="pl-3 pr-3 pt-3 pb-3">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name" placeholder="Run 5km">
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" class="form-control" id="dueDate">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <input type="text" class="form-control" id="category" placeholder="Goals">
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>Low</option>
+                      <option>Med</option>
+                      <option>High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="notes">Notes</label>
+                  <textarea class="form-control" id="notes" rows="3" placeholder="Run around lake"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Add Task</button>
+            </form>
+        </section>
+        
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>
