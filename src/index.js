@@ -25,18 +25,22 @@ addTaskBtn.addEventListener('click', () => {
     const category = document.querySelector('#category').value;
     const priority = document.querySelector('#priority').value;
     const notes = document.querySelector('#notes').value;
+    
+    if (name == "" || dueDate == "" || category == "" ) {
+        alert("Please enter a Name, Due Date and Category")
+    } else {
+        let newTask = task(name, dueDate, category, priority, notes);
 
-    let newTask = task(name, dueDate, category, priority, notes);
+        taskList.push(newTask);
 
-    taskList.push(newTask);
+        UI.assignIds();
 
-    UI.assignIds();
+        UI.updateTaskList();
 
-    UI.updateTaskList();
+        UI.showTaskList();
 
-    UI.showTaskList();
-
-    store.setStorage();
+        store.setStorage();
+    }
 })
 
 // EVENT: Completeing a task
@@ -58,8 +62,15 @@ deleteTaskBtn.addEventListener('click', () => {
 
 // EVENT: Update task
 updateTaskBtn.addEventListener('click', () => {
-    UI.updateTask(currentIndex);
-    
+    const name = document.querySelector('#nameEdit').value;
+    const dueDate = document.querySelector('#dueDateEdit').value;
+    const category = document.querySelector('#categoryEdit').value;
+
+    if (name == "" || dueDate == "" || category == "" ) {
+        alert("Please enter a Name, Due Date and Category")
+    } else {
+        UI.updateTask(currentIndex);
+    }
 })
 
 // EVENT: Add new task
@@ -82,8 +93,10 @@ const store = (() => {
     }
 
     const getStorage = () => {
-        taskList = JSON.parse(localStorage.getItem("taskList"));
-        UI.updateTaskList()
+        if (JSON.parse(localStorage.getItem("taskList")).length > 0) {
+            taskList = JSON.parse(localStorage.getItem("taskList"));
+            UI.updateTaskList()
+        }
     }
 
     return {
