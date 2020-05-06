@@ -16,28 +16,18 @@
         <section class="main-page bg-light d-flex flex-column justify-content-between align-items-center pt-3 pb-3 pl-3 pr-3 w-100">
             <div class="dropdown category-button-container">
                 <select name="categories" id="categorySelect" class="btn btn-secondary dropdown-toggle">
-                    <option id="all" class="dropdown-item">ALL</option>
+                    <option id="All" class="dropdown-item">All</option>
                 </select>
             </div>
+            <a class="sort-categories btn btn-outline-primary btn-sm mt-2 mb-2">Sort Categories</a>
             <div class="tasks-container d-flex flex-column">
-                <div class="task d-flex justify-content-center align-items-center pt-3 border-bottom pb-2">
-                    <input type="checkbox" name="" id="">
-                    <div class="task-info d-flex flex-column ml-3 align-items-center justify-content-center">
-                        <div class="task-name d-flex pr-2 pl-2 w-100 justify-self-center">Run 5km</div>
-                        <div class="task-details d-flex align-items-center justify-content-between">
-                            <div class="task-category pl-2 pr-2">Goals</div>
-                            <div class="task-priortiy pl-2 pr-2">High</div>
-                            <div class="task-due-date pl-2 pr-2 text-black-50">2020-05-05</div>
-                        </div>
-                    </div>
-                    <button class="view-or-edit-task h-50 ml-2 btn btn-primary btn-sm">View or Edit</button>
-                </div>
+                
             </div>
             <button class="add-new-task w-100 btn btn-secondary">Add a New Task</button>
         </section>
 
         <section class="view-or-edit-page bg-light w-100 d-none">
-            <form class="pl-3 pr-3 pt-3 pb-3">
+            <form class="pl-3 pr-3 pt-3 pb-3" id="viewOrEditForm">
                 <div class="form-group">
                   <label for="nameEdit">Name:</label>
                   <input type="text" class="form-control" id="nameEdit">
@@ -53,8 +43,7 @@
                 <div class="form-group">
                     <label for="priorityEdit">Priority</label>
                     <select id="priorityEdit" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>Low</option>
+                      <option selected>Low</option>
                       <option>Medium</option>
                       <option>High</option>
                     </select>
@@ -71,7 +60,7 @@
         </section>
 
         <section class="add-new-task-page bg-light w-100 d-none">
-            <form class="pl-3 pr-3 pt-3 pb-3">
+            <form class="pl-3 pr-3 pt-3 pb-3" id="addNewTaskForm">
                 <div class="form-group">
                   <label for="name">Name:</label>
                   <input type="text" class="form-control" id="name" placeholder="Run 5km">
@@ -87,9 +76,8 @@
                 <div class="form-group">
                     <label for="priority">Priority</label>
                     <select id="priority" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>Low</option>
-                      <option>Med</option>
+                      <option selected>Low</option>
+                      <option>Medium</option>
                       <option>High</option>
                     </select>
                 </div>
